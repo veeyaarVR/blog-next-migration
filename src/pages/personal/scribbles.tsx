@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom";
 
-export default function Scribble() {
+import { getAllScribbles , getAllScribblesByTag} from "../../utils/mdx"
+import Link from "next/link"
+
+export default function Scribbles({ scribbles }) {    
     return (
         <div className="blog superPadding fullScreen">
             <div className="colorPrimary paddingVertical  homeLink">
                 <div className="space"></div>
                 <div className="space"></div>
                 <p>
-                    <a href="/">VIGNESH MARIMUTHU </a> /<a href="/personal"> PERSONAL </a>{" "}
+                    <a href="/"> VIGNESH MARIMUTHU </a> /<a href="/personal"> PERSONAL </a>{" "}
                     /
                 </p>
                 <div className="bottomLine"> </div>
             </div>
             <HeaderSection />
-            <ScribbleList />
+            <ScribbleList scribbles={scribbles} />
         </div>
     );
 }
@@ -35,16 +37,24 @@ function HeaderSection() {
     );
 }
 
-function ScribbleList() {
+function ScribbleList({ scribbles }) {
     return (
         <div>
-            <div className="scribblesList subHeadingSecondary textColor">
-                <a href="hello">
-                    <div className="scribbleItem">
-                        hello1
-                    </div>
-                </a>
-            </div>
+            {scribbles.map((post, index) => (
+                <div
+                    className="scribblesList subHeadingSecondary textColor"
+                    key={post.slug}
+                >
+                    <Link
+                        href={{ pathname: `/personal/scribbles/${post.slug}` }}
+                        key={post.slug}
+                    >
+                        <div className="scribbleItem">
+                            {post.frontmatter.title} | {post.frontmatter.date}
+                        </div>
+                    </Link>
+                </div>
+            ))}
         </div>
     );
 }
@@ -55,4 +65,9 @@ function formatDate(date: Date) {
     // const dateTimeFormat = new Intl.DateTimeFormat("en-US", options | undefined);
     // console.log(dateTimeFormat.format(d));
     // return dateTimeFormat.format(d);
+}
+
+export async function getStaticProps(){
+    const scribbles = await getAllScribblesByTag("functions")
+    return scribbles;
 }
