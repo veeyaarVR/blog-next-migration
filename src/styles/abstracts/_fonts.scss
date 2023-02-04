@@ -64,3 +64,9 @@
   font-weight: 700;
   font-size: normal;
 }
+
+@font-face {
+  font-family: "Ponni Regular";
+  src: local("SpaceMono Bold"), url(../fonts/Tamil/TMOTKMN_Ship.TTF) format("truetype");
+  font-weight: 400;
+}

@@ -34,6 +34,35 @@ a {
 
 }
 
+.contentTamil {
+  font-family: "Ponni Regular";
+  font-size: 1rem;
+  color: $colorPrimary;
+
+
+  h1,h2,h3,h4,h5,h6{
+    color: $colorSecondary;
+  }
+
+  h3 {
+    margin-top: 50px;
+  }
+
+  p {
+    color: $textColor;
+    line-height: normal;
+    text-align: left;
+  }
+
+  li {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: $textColor;
+    font-family: "ShareTechMono";
+  }
+
+}
+
 .bottomLine {
   border-bottom: 1px solid rgba(0,0,0,.10);
 }

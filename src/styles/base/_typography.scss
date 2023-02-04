@@ -24,6 +24,19 @@
   }
 }
 
+.tamilFont {
+  font-family: "Ponni Regular", sans-serif;
+  font-size: 1em;
+
+  @include phone {
+    font-size: 1em;
+  }
+
+  @include tablet {
+    font-size: 1.1em;
+  }
+}
+
 .superTitlePrimary {
   font-family: "SpaceMono SemiBold", sans-serif;
   font-size: clamp(35px, 3vw, 75px);
