@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Professional() {
     return (
         <div className="headerInfo padding25 superPadding">
             <div className="colorPrimary bottomLine homeLink">
-                <a href="/">← VIGNESH MARIMUTHU</a>
+                <Link href="/">← VIGNESH MARIMUTHU</Link>
             </div>
             <div className="space">&nbsp;</div>
             <div className="space">&nbsp;</div>
@@ -14,12 +16,12 @@ export default function Professional() {
                 and would love to discuss on coding, android apps, politics, movies or
                 books over a cup of coffee ☕
             </p>
-            <a
+            <Link
                 href="mailto: vigneshmarimuthu2302@gmail.com"
                 className="personal-link buttonText colorSecondary"
             >
                 Contact →
-            </a>
+            </Link>
             <div className="space">&nbsp;</div>
             <div className="space">&nbsp;</div>
             <div className="space">&nbsp;</div>

@@ -1,6 +1,7 @@
 import { getAllPaths, getContentBySlug } from "@/utils/mdx";
 import { language } from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
+import Link from "next/link";
 
 export async function getStaticPaths() {
     const allPaths = await getAllPaths()
@@ -21,9 +22,9 @@ export default function Scribble({ frontmatter, mdxSource }) {
                     <div className="space"></div>
                     <div className="space"></div>
                     <p>
-                        <a href="/">VIGNESH MARIMUTHU </a> /
-                        <a href="/personal"> PERSONAL </a> /
-                        <a href="/personal/scribbles"> SCRIBBLES </a> /
+                        <Link href="/">VIGNESH MARIMUTHU </Link> /
+                        <Link href="/personal"> PERSONAL </Link> /
+                        <Link href="/personal/scribbles"> SCRIBBLES </Link> /
                     </p>
                     <div className="bottomLine"> </div>
                 </div>

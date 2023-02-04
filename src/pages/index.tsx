@@ -4,6 +4,7 @@ import {
   faReddit,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,18 +23,18 @@ export default function Home() {
           </h1>
 
           <div className="flex flex-jc-start">
-            <a
+            <Link
               href="/personal"
               className="personal-link buttonText colorSecondary"
             >
               Personal →
-            </a>
-            <a
+            </Link>
+            <Link
               href="/professional"
               className="personal-link buttonText colorSecondary"
             >
               Professional →
-            </a>
+            </Link>
           </div>
         </div>
       </div>

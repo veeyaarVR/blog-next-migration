@@ -9,7 +9,7 @@ export default function Scribbles({ scribbles }) {
                 <div className="space"></div>
                 <div className="space"></div>
                 <p>
-                    <a href="/"> VIGNESH MARIMUTHU </a> /<a href="/personal"> PERSONAL </a>{" "}
+                    <Link href="/"> VIGNESH MARIMUTHU </Link> /<Link href="/personal"> PERSONAL </Link>{" "}
                     /
                 </p>
                 <div className="bottomLine"> </div>
@@ -68,6 +68,6 @@ function formatDate(date: Date) {
 }
 
 export async function getStaticProps(){
-    const scribbles = await getAllScribblesByTag("functions")
+    const scribbles = await getAllScribbles()
     return scribbles;
 }

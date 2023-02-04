@@ -1,5 +1,6 @@
 import { faMedium, faReddit, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 let interestList = [
     "Minimalism",
     "Atheism",
@@ -39,23 +40,23 @@ let interestList = [
   const shortStory = (
     <>
       A full-time Android Dev based in India, who also runs a{" "}
-      <a
+      <Link
         href="https://www.youtube.com/channel/UCUjFwZ-SEMK5k-i24VzRu0w?sub_confirmation=1"
         className="buttonText colorSecondary"
       >
         YouTube Channel
-      </a>{" "}
+      </Link>{" "}
       and a{" "}
-      <a
+      <Link
         href="https://blog.vigneshmarimuthu.com/"
         className="buttonText colorSecondary"
       >
         Blog
-      </a>
+      </Link>
       , where I post and write tech tutorials. (Yeah! Nerd.)<br></br>
       <br></br>Selectively social, constant learner, cis-het, creative at night, motivated during shower,
       occasionally good lookin and a humble human being. Belongs to House Targaryen.<br></br>
-      <br></br>I am that guy, who cuts your call and texts you back, <i>I'll call you
+      <br></br>I am that guy, who cuts your call and texts you back, <i>I`&apos;`ll call you
       later</i>, but never does.
     </>
   );
@@ -63,7 +64,7 @@ let interestList = [
     return (
       <div className="personal">
         <div className="colorPrimary padding25  homeLink centerHorizontal">
-          <a href="/">⌂ VIGNESH MARIMUTHU</a>
+          <Link href="/">⌂ VIGNESH MARIMUTHU</Link>
           <div className="bottomLine"> </div>
         </div>
         <IntroSection />
@@ -89,18 +90,18 @@ let interestList = [
             He/Him. Minimalist. Stoic. Atheist. Human
           </h1>
           <div className="space"> </div>
-          <a
+          <Link
             href="https://blog.vigneshmarimuthu.com"
             className="personal-link buttonText colorSecondary"
           >
             Blog →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/personal/scribbles"
             className="personal-link buttonText colorSecondary"
           >
             Scribbles →
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -135,13 +136,13 @@ let interestList = [
             {interestList.map((item, index) => {
               let url = "https://www.google.com/search?q=" + item;
               return (
-                <a
+                <Link
                   href={url}
                   key={url}
                   className="interests buttonText colorSecondary"
                 >
                   {item}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -155,23 +156,23 @@ let interestList = [
       <div className="flex flex-ai-c flex-jc-c superPadding">
         <div>
           <div className="subHeadingSecondary colorSecondary subHeadingSecondary-align-center padding25">
-            Connect with me even if you don't vibe with any of the above 🙌
+            Connect with me even if you don`&apos;`t vibe with any of the above 🙌
             <br></br> I desperately need some friends.
           </div>
           <div className="flex flex-ai-c flex-jc-c">
-            <a href="https://twitter.com/veeraakurilil">
+            <Link href="https://twitter.com/veeraakurilil">
               <FontAwesomeIcon
                 className="socialIcon"
                 icon={faTwitter}
                 size="2x"
               />
-            </a>
-            <a href="https://www.reddit.com/user/VeeraaKurilil">
+            </Link>
+            <Link href="https://www.reddit.com/user/VeeraaKurilil">
               <FontAwesomeIcon className="socialIcon" icon={faReddit} size="2x" />
-            </a>
-            <a href="https://medium.com/@vigneshmarimuthu2302">
+            </Link>
+            <Link href="https://medium.com/@vigneshmarimuthu2302">
               <FontAwesomeIcon className="socialIcon" icon={faMedium} size="2x" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -188,12 +189,12 @@ let interestList = [
             gift me 🥳
           </div>
           <div className="flex flex-ai-c flex-jc-c">
-            <a
+            <Link
               href="/personal/wishlist"
               className="personal-link buttonText colorSecondary"
             >
               My Wishlist →
-            </a>
+            </Link>
           </div>
           <div className="space"></div>
         <div className="space"></div>
