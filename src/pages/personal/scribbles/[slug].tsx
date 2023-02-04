@@ -1,7 +1,63 @@
-export function getStaticPaths () {
+import { getAllPaths, getContentBySlug } from "@/utils/mdx";
+import { language } from "gray-matter";
+import { MDXRemote } from "next-mdx-remote";
 
-} 
+export async function getStaticPaths() {
+    const allPaths = await getAllPaths()
+    return allPaths
+}
 
-export function getStaticProps () {
+export async function getStaticProps({ params: { slug } }) {
+    const contentValue = await getContentBySlug({ slug: slug })
+    return contentValue
+}
 
+export default function Scribble({ frontmatter, mdxSource }) {
+    return (
+        <div>
+
+            <div className="bookScreen superPadding fullScreen">
+                <div className="colorPrimary paddingVertical  homeLink">
+                    <div className="space"></div>
+                    <div className="space"></div>
+                    <p>
+                        <a href="/">VIGNESH MARIMUTHU </a> /
+                        <a href="/personal"> PERSONAL </a> /
+                        <a href="/personal/scribbles"> SCRIBBLES </a> /
+                    </p>
+                    <div className="bottomLine"> </div>
+                </div>
+                <div className="padding25 bottomLine">
+                    <h1
+                        className="superTitlePrimary colorSecondary "
+                        data-text="Vignesh Marimuthu"
+                    >{frontmatter.title}
+                    </h1>
+                </div>
+
+                <div className="scribbleContent contentTamil padding25">
+                    <MDXRemote {...mdxSource}></MDXRemote>
+                </div>
+
+
+
+            </div>
+        </div>
+    );
+}
+
+export function ScribbleContent({ language, mdxSource }) {
+    if (language == 'tamil') {
+        return (
+            <div className="scribbleContent contentTamil padding25">
+                
+
+                <MDXRemote {...mdxSource}></MDXRemote>
+            </div>)
+    } else {
+        return (
+            <div className="scribbleContent content padding25">
+                <MDXRemote {...mdxSource}></MDXRemote>
+            </div>)
+    }
 }
