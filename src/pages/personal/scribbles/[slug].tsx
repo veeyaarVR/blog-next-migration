@@ -36,19 +36,18 @@ export default function Scribble({ frontmatter, mdxSource }) {
                     </h1>
                 </div>
 
+                <ScribbleContent frontmatter={frontmatter} mdxSource={mdxSource} />
+{/* 
                 <div className="scribbleContent contentTamil padding25">
                     <MDXRemote {...mdxSource}></MDXRemote>
-                </div>
-
-
-
+                </div> */}
             </div>
         </div>
     );
 }
 
-export function ScribbleContent({ language, mdxSource }) {
-    if (language == 'tamil') {
+export function ScribbleContent({ frontmatter, mdxSource }) {
+    if (frontmatter.language == 'tamil') {
         return (
             <div className="scribbleContent contentTamil padding25">
                 
